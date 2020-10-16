@@ -13,46 +13,40 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     int scorea = 0, scoreb = 0;
+
+    void display(){
+        TextView quantityTextViewa = (TextView) findViewById(R.id.team_a_score);
+        TextView quantityTextViewb = (TextView) findViewById(R.id.team_b_score);
+        quantityTextViewa.setText("" + scorea);
+        quantityTextViewb.setText("" + scoreb);
+    }
     public void aplus3(View view){
         scorea += 3;
-        displaya();
+        display();
     }
     public void aplus2(View view){
         scorea += 2;
-        displaya();
+        display();
     }
     public void aplus1(View view){
         scorea += 1;
-        displaya();
+        display();
     }
     public void bplus3(View view){
         scoreb += 3;
-        displayb();
+        display();
     }
     public void bplus2(View view){
         scoreb += 2;
-        displayb();
+        display();
     }
     public void bplus1(View view){
         scoreb += 1;
-        displayb();
-    }
-    public void displaya() {
-        TextView quantityTextView = (TextView) findViewById(R.id.team_a_score);
-        quantityTextView.setText("" + scorea);
-    }
-    public void displayb() {
-        TextView quantityTextView = (TextView) findViewById(R.id.team_b_score);
-        quantityTextView.setText("" + scoreb);
+        display();
     }
     public void reset(View view) {
         scorea = 0;
         scoreb = 0;
-        TextView quantityTextViewa = (TextView) findViewById(R.id.team_a_score);
-        quantityTextViewa.setText("" + 0);
-        TextView quantityTextViewb = (TextView) findViewById(R.id.team_b_score);
-        quantityTextViewb.setText("" + 0);
+        display();
     }
-
-
 }
